@@ -1,0 +1,86 @@
+```html
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MiniSora AI</title>
+<style>
+body {
+margin:0;
+background:linear-gradient(140deg,#080c24,#25205b);
+color:white;
+font-family:Arial;
+text-align:center;
+padding:25px 15px;
+}
+h1 {font-size:38px;color:#a99aff}
+.box {
+max-width:500px;
+margin:35px auto;
+padding:25px;
+background:#171a38;
+border-radius:22px;
+}
+textarea {
+width:95%;
+height:120px;
+border-radius:12px;
+padding:10px;
+font-size:16px;
+}
+button {
+background:#805cff;
+color:white;
+border:0;
+border-radius:12px;
+padding:15px;
+margin-top:15px;
+width:100%;
+font-size:17px;
+font-weight:bold;
+}
+p {color:#c9c9e5}
+</style>
+</head>
+<body>
+
+<h1>🎬 MiniSora AI</h1>
+<p>Twórz niesamowite filmy AI!</p>
+
+<div class="box">
+<h2>✨ Opisz swój film</h2>
+
+<textarea id="prompt" placeholder="Opisz swój film..."></textarea>
+
+<button onclick="generate()">🚀 STWÓRZ FILM</button>
+
+<p id="status"></p>
+
+<button onclick="window.open('https://wan2.video/','_blank')">
+🎥 OTWÓRZ GENERATOR AI
+</button>
+</div>
+
+<p>MiniSora AI © 2026</p>
+
+<script>
+function generate() {
+const prompt = document.getElementById("prompt").value;
+if(!prompt.trim()) {
+alert("Najpierw opisz swój film!");
+return;
+}
+navigator.clipboard.writeText(prompt).then(() => {
+document.getElementById("status").innerText =
+"✅ Skopiowano opis! Wklej go w generatorze AI.";
+}).catch(() => {
+document.getElementById("status").innerText =
+"Skopiuj opis ręcznie.";
+});
+}
+</script>
+
+</body>
+</html>
+```
